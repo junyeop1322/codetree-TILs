@@ -8,7 +8,7 @@ public class Main {
         
         int n = Integer.parseInt(br.readLine());
 
-        int ans = (int)Math.pow(n, 2);
+        int ans = n * n;
         
         System.out.println(ans);
 
