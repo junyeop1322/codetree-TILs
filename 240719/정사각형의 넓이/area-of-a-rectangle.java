@@ -8,11 +8,11 @@ public class Main {
         
         int n = Integer.parseInt(br.readLine());
 
-        int ans = n * n;
+        int ans = (int)Math.pow(n, 2);
         
         System.out.println(ans);
 
-        if (ans < 5) {
+        if (n < 5) {
             System.out.println("tiny");
         }
 
