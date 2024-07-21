@@ -14,9 +14,9 @@ public class Main {
 
         if (mid >= 90) {
             if (fin >= 95) {
-                ans = 10;
+                ans = 100000;
             } else if (fin >= 90) {
-                ans = 5;
+                ans = 50000;
             }
         }
 
