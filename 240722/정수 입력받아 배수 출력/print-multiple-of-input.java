@@ -11,7 +11,7 @@ public class Main {
         StringBuilder sb = new StringBuilder();
 
         for (int i = 1; i <= 5; i++) {
-            sb.append(i*7 + " ");
+            sb.append(i*n + " ");
         }
 
         System.out.println(sb);
