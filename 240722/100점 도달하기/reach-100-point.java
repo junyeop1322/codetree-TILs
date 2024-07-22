@@ -21,7 +21,7 @@ public class Main {
             } else if (i >= 60) {
                 str = "D";
             } else {
-                str = "E";
+                str = "F";
             }
 
             sb.append(str + " ");
