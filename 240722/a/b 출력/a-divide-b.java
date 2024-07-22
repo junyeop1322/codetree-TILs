@@ -10,6 +10,8 @@ public class Main {
         double a = Double.parseDouble(st.nextToken());
         double b = Double.parseDouble(st.nextToken());
 
-        System.out.printf("%.20f", a/b);
+        String str = String.format("%.20f", a/b);
+
+        System.out.println(str);
     }
 }
