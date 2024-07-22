@@ -14,7 +14,7 @@ public class Main {
             System.out.println("*");
             i++;
 
-            if (i > 5) {
+            if (i > n) {
                 break;
             }
         }
