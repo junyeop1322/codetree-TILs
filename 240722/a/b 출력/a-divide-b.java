@@ -7,17 +7,22 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        double a = Double.parseDouble(st.nextToken());
-        double b = Double.parseDouble(st.nextToken());
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
 
-        String str = String.format("%.21f", a/b);
-        
-        String ans = "";
+        StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < str.length()-1; i++) {
-            ans += str.charAt(i);
+        sb.append(a/b + ".");
+
+        a %= b;
+
+        for (int i = 0; i < 20; i++) {
+            a *= 10;
+            sb.append(a/b);
+
+            a %= b;
         }
 
-        System.out.println(ans);
+        System.out.println(sb);
     }
 }
