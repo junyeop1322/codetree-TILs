@@ -10,8 +10,14 @@ public class Main {
         double a = Double.parseDouble(st.nextToken());
         double b = Double.parseDouble(st.nextToken());
 
-        String str = String.format("%.20f", a/b);
+        String str = String.format("%.21f", a/b);
+        
+        String ans = "";
 
-        System.out.println(str);
+        for (int i = 0; i < str.length()-1; i++) {
+            ans += str.charAt(i);
+        }
+
+        System.out.println(ans);
     }
 }
