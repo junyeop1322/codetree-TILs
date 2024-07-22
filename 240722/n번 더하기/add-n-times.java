@@ -12,7 +12,7 @@ public class Main {
 
         StringBuilder sb = new StringBuilder();
 
-        for (int i = 1; i <= 6; i++) {
+        for (int i = 1; i <= n; i++) {
             sb.append(a + n*i + "\n");
         }
 
