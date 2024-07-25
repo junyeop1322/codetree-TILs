@@ -25,7 +25,7 @@ public class Main {
 
         String str = "No";
 
-        for (int i = 0; i < n-m; i++) {
+        for (int i = 0; i <= n-m; i++) {
             if (arr1[i] == arr2[0]) {
                 int idx = i;
                 int check = 0;
