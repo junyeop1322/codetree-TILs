@@ -19,6 +19,11 @@ public class Main {
 
         int max = -1;
 
+        if (n == 1) {
+            System.out.println(arr[0]);
+            return;
+        }
+
         for (int i = n-1; i >= 0; i--) {
             if (i > 0 && i < n-1) {
                 if (arr[i] != arr[i-1] && arr[i] != arr[i+1]) {
