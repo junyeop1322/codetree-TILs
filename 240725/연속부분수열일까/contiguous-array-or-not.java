@@ -30,7 +30,7 @@ public class Main {
                 int idx = i;
                 int check = 0;
                 for (int j = 0; j < m; j++) {
-                    if (arr2[i] != arr1[idx]) {
+                    if (arr2[j] != arr1[idx]) {
                         check = 1;
                         break;
                     }
