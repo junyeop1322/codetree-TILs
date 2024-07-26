@@ -26,9 +26,8 @@ public class Main {
             }
         }
 
-        if (cnt != 1) {
-            sb.append(cnt);
-        }
+        sb.append(cnt);
+        
 
         System.out.println(sb.length());
         System.out.println(sb);
