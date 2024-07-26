@@ -14,26 +14,31 @@ public class Main {
         for (int i = 0; i < 3; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
 
-            if (cnt == 2) {
-                System.out.println(arr[0]*arr[1]*arr[2]);
-                return;
-            }
-
             if (arr[i] % 2 == 0) {
                 cnt++;
+            }
+            if (cnt == 3) {
+                System.out.println(arr[0]*arr[1]*arr[2]);
+                return;
             }
         }
 
         if (cnt == 0) {
             System.out.println(arr[0]*arr[1]*arr[2]);
             return;
-        } else {
+        } else if (cnt == 1) {
             for (int i = 0 ; i < 3; i++) {
                 if (arr[i] % 2 != 0) {
                     pro *= arr[i];
                 }
             }
             System.out.println(pro);
+        } else {
+            for (int i = 0; i < 3; i++) {
+                if (arr[i] % 2 == 1) {
+                    System.out.println(arr[i]);
+                }
+            }
         }
 
 
