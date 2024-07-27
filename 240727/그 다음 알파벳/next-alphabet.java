@@ -6,6 +6,12 @@ public class Main {
         // 여기에 코드를 작성해주세요.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println((char)((int)br.readLine().charAt(0) + 1));
+        char ch = br.readLine().charAt(0);
+
+        if (ch == 'z') {
+            System.out.println('a');
+        } else {
+            System.out.println((char)((int)ch + 1));
+        }
     }
 }
