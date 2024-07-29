@@ -42,10 +42,9 @@ public class Main {
                 it.add(ch);
             }
         }
-
-        for (int i = 0; i < list.size(); i++) {
-            sb.append(list.get(i));
+        it = list.listIterator();
+        while(it.hasNext()) {
+            System.out.print(it.next());
         }
-        System.out.println(sb);
     }
 }
