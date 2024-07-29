@@ -33,12 +33,15 @@ public class Main {
                 char ch = st.nextToken().charAt(0);
                 list.add(idx+1, ch);
             } else if (order.equals("R")) {
-                if (idx != len) {
+                if (idx <= len) {
                     idx++;
                 }
             } else if (order.equals("D")) {
                 if (idx != len) {
                     list.remove(idx);
+                    if (idx == list.size()) {
+                        idx--;
+                    }
                 }
             }
             // System.out.println(i + " : " + str + " : " + order + " : idx = " + idx);
