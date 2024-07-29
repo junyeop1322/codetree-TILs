@@ -23,6 +23,7 @@ public class Main {
         for (int i = 0; i < m; i++) {
             st = new StringTokenizer(br.readLine(), " ");
             String order = st.nextToken();
+            int len = list.size();
 
             if (order.equals("L")) {
                 if (idx >= 0) {
@@ -32,11 +33,11 @@ public class Main {
                 char ch = st.nextToken().charAt(0);
                 list.add(idx+1, ch);
             } else if (order.equals("R")) {
-                if (idx != list.size()) {
+                if (idx != len) {
                     idx++;
                 }
             } else if (order.equals("D")) {
-                if (idx != list.size()) {
+                if (idx != len) {
                     list.remove(idx);
                 }
             }
