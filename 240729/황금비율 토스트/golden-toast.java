@@ -18,31 +18,29 @@ public class Main {
         for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
-        int idx = list.size();
+        ListIterator<Character> it = list.listIterator(list.size());
 
         for (int i = 0; i < m; i++) {
             st = new StringTokenizer(br.readLine(), " ");
             String order = st.nextToken();
-            int len = list.size();
 
             if (order.equals("L")) {
-                if (idx > 0) {
-                    idx--;
+                if (it.hasPrevious()) {
+                    it.previous();
+                }
+            } else if (order.equals("R")) {
+                if (it.hasNext()) {
+                    it.next();
+                }
+            } else if (order.equals("D")) {
+                if (it.hasNext()) {
+                    it.next();
+                    it.remove();
                 }
             } else if (order.equals("P")) {
                 char ch = st.nextToken().charAt(0);
-                list.add(idx, ch);
-                idx++;
-            } else if (order.equals("R")) {
-                if (idx < len) {
-                    idx++;
-                }
-            } else if (order.equals("D")) {
-                if (idx < len) {
-                    list.remove(idx);
-                }
+                it.add(ch);
             }
-            // System.out.println(i + " : " + str + " : " + order + " : idx = " + idx);
         }
 
         for (int i = 0; i < list.size(); i++) {
