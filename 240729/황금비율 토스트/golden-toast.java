@@ -26,7 +26,7 @@ public class Main {
             int len = list.size();
 
             if (order.equals("L")) {
-                if (idx >= 0) {
+                if (idx > 0) {
                     idx--;
                 }
             } else if (order.equals("P")) {
@@ -34,7 +34,7 @@ public class Main {
                 list.add(idx, ch);
                 idx++;
             } else if (order.equals("R")) {
-                if (idx <= len) {
+                if (idx < len) {
                     idx++;
                 }
             } else if (order.equals("D")) {
