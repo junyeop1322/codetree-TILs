@@ -37,11 +37,8 @@ public class Main {
                     idx++;
                 }
             } else if (order.equals("D")) {
-                if (idx != len) {
+                if (idx < len) {
                     list.remove(idx);
-                    if (idx == list.size()) {
-                        idx--;
-                    }
                 }
             }
             // System.out.println(i + " : " + str + " : " + order + " : idx = " + idx);
