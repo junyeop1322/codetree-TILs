@@ -25,7 +25,7 @@ public class Main {
             String order = st.nextToken();
 
             if (order.equals("L")) {
-                if (idx != 0) {
+                if (idx >= 0) {
                     idx--;
                 }
             } else if (order.equals("P")) {
