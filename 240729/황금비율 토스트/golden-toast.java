@@ -31,7 +31,8 @@ public class Main {
                 }
             } else if (order.equals("P")) {
                 char ch = st.nextToken().charAt(0);
-                list.add(idx+1, ch);
+                list.add(idx, ch);
+                idx++;
             } else if (order.equals("R")) {
                 if (idx <= len) {
                     idx++;
