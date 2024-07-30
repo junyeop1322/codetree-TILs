@@ -33,6 +33,9 @@ public class Main {
                         sb.append("0\n");
                     }
                     break;
+                case "top" :
+                    sb.append(stk.peek() + "\n");
+                    break;
             }
         }
 
