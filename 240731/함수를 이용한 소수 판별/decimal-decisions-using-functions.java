@@ -31,6 +31,10 @@ public class Main {
             }
         }
 
+        if (a == 1) {
+            sum++;
+        }
+
         return sum;
     }
 }
