@@ -7,14 +7,30 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
+        ArrayList<Integer> list = new ArrayList<>();
         int n = Integer.parseInt(br.readLine());
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= Math.sqrt(n); i++) {
             if (n % i == 0) {
-                sb.append(i + " ");
+                int num = i;
+                int num2 = n/i;
+
+                if (num != num2) {
+                    list.add(num);
+                    list.add(num2);
+                } else {
+                    list.add(num);
+                }
             }
         }
 
+        Collections.sort(list);
+
+        for (int i = 0; i < list.size(); i++) {
+            sb.append(list.get(i) + " ");
+        }
+
         System.out.println(sb);
+
     }
 }
