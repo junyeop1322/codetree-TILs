@@ -14,10 +14,10 @@ public class Main {
 
     static String checkYear(int n) {
         String str = "";
-        if (n % 4 == 0 || (n % 400 == 0 && n % 100 != 0)) {
-            str = "true";
-        } else {
+        if (n % 4 != 0 || (n % 400 != 0 && n % 100 == 0)) {
             str = "false";
+        } else {
+            str = "true";
         }
 
         return str;
