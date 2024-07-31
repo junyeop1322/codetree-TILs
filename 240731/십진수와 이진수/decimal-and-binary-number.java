@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+import java.math.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -7,7 +8,10 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine();
 
-        System.out.println(Integer.toString(Integer.parseInt(str, 2)*17, 2));
+        BigInteger num = new BigInteger(str, 2);
+        BigInteger res = num.multiply(BigInteger.valueOf(17));
+
+        System.out.println(res.toString(2));
 
     }
 }
