@@ -11,7 +11,14 @@ public class Main {
         String order = st.nextToken();
         int m = Integer.parseInt(st.nextToken());
 
-        System.out.println(n + " " + order + " " + m + " = " + cal(n, m, order));
+        int ans = cal(n, m, order);
+
+        if (ans == Integer.MAX_VALUE) {
+            System.out.println("False");
+            return;
+        }
+
+        System.out.println(n + " " + order + " " + m + " = " + ans);
     }
 
     static int cal(int a, int b, String order) {
@@ -30,6 +37,8 @@ public class Main {
             case "/" :
                 num = a / b;
                 break;
+            default :
+                num = Integer.MAX_VALUE;
         }
 
         return num;
