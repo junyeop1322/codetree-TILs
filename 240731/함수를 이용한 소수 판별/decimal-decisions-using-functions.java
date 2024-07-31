@@ -32,7 +32,7 @@ public class Main {
         }
 
         if (a == 1) {
-            sum++;
+            sum--;
         }
 
         return sum;
