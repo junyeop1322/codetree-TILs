@@ -18,7 +18,7 @@ public class Main {
 
         for (int i = a; i <= b; i++) {
             boolean cek = true;
-            for (int j = 2; j < Math.sqrt(i); j++) {
+            for (int j = 2; j <= Math.sqrt(i); j++) {
                 if (i % j == 0) {
                     cek = false;
                     break;
