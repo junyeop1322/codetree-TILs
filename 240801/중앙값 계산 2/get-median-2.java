@@ -17,9 +17,8 @@ public class Main {
 
             list.add(num);
 
-            if (num % 2 == 1) {
+            if ((i+1) % 2 == 1) {
                 Collections.sort(list);
-
                 sb.append(list.get((i+1)/2) + " ");
             }
         }
