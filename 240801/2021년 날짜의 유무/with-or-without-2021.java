@@ -16,6 +16,10 @@ public class Main {
     static String checkDate(int m, int d) {
         int[] month = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
+        if (m < 1 || m > 12) {
+            return "No";
+        }
+        
         if (d <= month[m]) {
             return "Yes";
         } else {
