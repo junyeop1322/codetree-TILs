@@ -8,6 +8,11 @@ public class Main {
         String str1 = br.readLine();
         String str2 = br.readLine();
 
+        if (str1.length() != str2.length()) {
+            System.out.println("No");
+            return;
+        }
+
         char[] arr = new char[str1.length()];
         char[] brr = new char[str2.length()];
 
