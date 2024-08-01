@@ -17,6 +17,10 @@ public class Main {
         int max = Math.max(a, b);
         int min = Math.min(a, b);
 
-        System.out.println(min*2 + " " + (max+25));
+        if (a == min) {
+            System.out.println(min*2 + " " + (max+25));
+        } else {
+            System.out.println((max+25) + " " + min*2);
+        }
     }
 }
