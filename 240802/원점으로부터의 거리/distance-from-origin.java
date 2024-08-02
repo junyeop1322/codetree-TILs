@@ -31,10 +31,10 @@ public class Main {
         }
 
         Arrays.sort(point, (o1, o2) -> {
-            if (((int)Math.pow(o1.x, 2) + (int)Math.pow(o1.y, 2)) == ((int)Math.pow(o2.x, 2) + (int)Math.pow(o2.y, 2))) {
+            if ((Math.abs(o1.x) + Math.abs(o1.y)) == (Math.abs(o2.x) + Math.abs(o2.y))) {
                 return o1.num - o2.num;
             }
-            return ((int)Math.pow(o1.x, 2) + (int)Math.pow(o1.y, 2)) - ((int)Math.pow(o2.x, 2) + (int)Math.pow(o2.y, 2));
+            return (Math.abs(o1.x) + Math.abs(o1.y)) - (Math.abs(o2.x) + Math.abs(o2.y));
         });
 
         for (int i = 0; i < n; i++) {
