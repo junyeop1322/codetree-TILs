@@ -32,15 +32,16 @@ public class Main {
 
         if (b >= 11) {
             d = a - 11;
+            h = b - 11;
         } else {
             d = a - 12;
+            h = 24 - (11 - b);
         }
 
         if (c >= 11) {
-            h = b - 11;
             m = c - 11;
         } else {
-            h = b - 12;
+            h--;
             m = 60 - (11 - c);
         }
 
