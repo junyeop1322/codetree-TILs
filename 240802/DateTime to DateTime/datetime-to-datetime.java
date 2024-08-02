@@ -14,11 +14,11 @@ public class Main {
         if (a < 11) {
             System.out.println(-1);
             return;
-        } else {
+        } else if (a == 11){
             if (b < 11) {
                 System.out.println(-1);
                 return;
-            } else {
+            } else if (b == 11) {
                 if (c < 11) {
                     System.out.println(-1);
                     return;
