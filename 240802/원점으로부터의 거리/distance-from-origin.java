@@ -32,7 +32,7 @@ public class Main {
 
         Arrays.sort(point, (o1, o2) -> {
             if (((int)Math.pow(o1.x, 2) + (int)Math.pow(o1.y, 2)) == ((int)Math.pow(o2.x, 2) + (int)Math.pow(o2.y, 2))) {
-                return o1.num - o2.num;
+                return o2.num - o1.num;
             }
             return ((int)Math.pow(o1.x, 2) + (int)Math.pow(o1.y, 2)) - ((int)Math.pow(o2.x, 2) + (int)Math.pow(o2.y, 2));
         });
