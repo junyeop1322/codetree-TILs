@@ -1,13 +1,17 @@
 import java.io.*;
 import java.util.*;
+import java.math.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         // 여기에 코드를 작성해주세요.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        String str = st.nextToken();
-
-        System.out.println(Integer.toString(Integer.parseInt(str, 8), 2));
+        String octal = br.readLine();
+        
+        BigInteger decimal = new BigInteger(octal, 8);
+        
+        String binary = decimal.toString(2);
+        
+        System.out.println(binary);
     }
 }
