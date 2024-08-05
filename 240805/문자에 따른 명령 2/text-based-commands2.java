@@ -16,7 +16,7 @@ public class Main {
 
             switch(ch) {
                 case 'L' :
-                    if (v == 5) {
+                    if (v == 4) {
                         v = 1;
                     } else {
                         v++;
