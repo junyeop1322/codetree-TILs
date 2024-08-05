@@ -19,7 +19,7 @@ public class Main {
         int idx = -1;
         for (int i = 0; i < days.length; i++) {
             if (days[i].equals(str)) {
-                idx = i+1;
+                idx = i;
                 break;
             }
         }
