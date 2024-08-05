@@ -31,12 +31,14 @@ public class Main {
         int idxB = 0;
 
         int cnt = 0;
-        boolean check;
+        int check;
 
         if (arr[0][1] > brr[0][1]) {
-            check = true;
+            check = 1;
+        } else if (arr[0][1] == brr[0][1]) {
+            check = 0;
         } else {
-            check = false;
+            check = 2;
         }
 
         int a = 0;
@@ -55,14 +57,23 @@ public class Main {
             b += bv;
             cntB++;
 
-            if (check && a < b) {
+            if (check == 0 && a != b) {
                 cnt++;
-                check = false;
+                if (a > b) {
+                    check = 1;
+                } else {
+                    check = 2;
+                }
             }
 
-            if (!check && b < a) {
+            if (check == 1 && b > a) {
                 cnt++;
-                check = true;
+                check = 2;
+            }
+
+            if (check == 2 && a > b) {
+                cnt++;
+                check = 1;
             }
 
             if (cntA == at) {
