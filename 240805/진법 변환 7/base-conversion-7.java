@@ -12,23 +12,18 @@ public class Main {
         int intNum = (int)num;
         String strNum = Integer.toString(intNum, 2);
 
-        double douNum = num - intNum;
+        double fracNum = num - intNum;
         sb.append(".");
 
-        while(douNum > 0) {
-            douNum *= 2;
-            if (douNum >= 1) {
+        for (int i = 0; i < 4; i++) { // 소수 부분을 네 자리까지 구하기 위해 반복
+            fracNum *= 2;
+            if (fracNum >= 1) {
                 sb.append("1");
+                fracNum -= 1;
             } else {
                 sb.append("0");
             }
-
-            if (sb.length() > 5) {
-                break;
-            }
         }
-
-        sb.delete(sb.length()-1, sb.length());
 
         System.out.println(strNum + sb.toString());
     }
