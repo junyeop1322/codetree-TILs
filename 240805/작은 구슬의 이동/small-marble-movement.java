@@ -29,16 +29,16 @@ public class Main {
                     y++;
                 }
             } else if (order.equals("U")) {
-                if (x == n) {
+                if (x == 1) {
                     order = "D";
                 } else {
-                    x++;
+                    x--;
                 }
             } else if (order.equals("D")) {
-                if (x == 1) {
+                if (x == n) {
                     order = "U";
                 } else {
-                    x--;
+                    x++;
                 }
             }
         }
