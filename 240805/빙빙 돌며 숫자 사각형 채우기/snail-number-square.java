@@ -19,6 +19,11 @@ public class Main {
         int x = 0;
         int y = 0;
 
+        if (n == 1 && m == 1) {
+            System.out.println(1);
+            return;
+        }
+
         for (int i = 1; i <= n*m; i++) {
             arr[x][y] = i;
 
