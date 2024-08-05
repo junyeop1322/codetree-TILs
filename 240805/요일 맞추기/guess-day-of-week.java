@@ -26,6 +26,10 @@ public class Main {
         // 두 번째 날짜의 요일 계산
         int ans = (int)((firstDay + difDay - 1) % 7 + 1);
 
+        if (ans <= 0) {
+            ans += 7;
+        }
+
         System.out.println(day[ans]);
     }
 }
