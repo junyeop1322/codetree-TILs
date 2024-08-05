@@ -45,7 +45,7 @@ public class Main {
             }
         }
 
-        if (cnt >= 3) {
+        if (cnt == 3) {
             sb.append("1\n");
         } else {
             sb.append("0\n");
