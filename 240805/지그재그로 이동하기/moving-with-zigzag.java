@@ -14,25 +14,41 @@ public class Main {
         int cnt = 0;
         int num = 0;
 
+        // while (true) {
+        //     if (cnt % 2 == 0) {
+        //         if (b <= a + (int)Math.pow(-2, cnt) && b >= num) {
+        //             ans += b - num + 1;
+        //             break;
+        //         }
+        //     } else {
+        //         if (b >= a + (int)Math.pow(-2, cnt) && b <= num) {
+        //             ans += num - b + 1;
+        //             break;
+        //         }
+        //     }
+
+        //     ans += (int)Math.pow(2, cnt);
+        //     num = a + (int)Math.pow(-2, cnt);
+        //     cnt++;
+
+        //     // System.out.println("cnt : " + cnt + ", ans : " + ans + ", num : " + num);
+        // }
+
+        int number = Math.abs(a-b);
+
         while (true) {
-            if (cnt % 2 == 0) {
-                if (b <= a + (int)Math.pow(-2, cnt) && b >= num) {
-                    ans += b - num + 1;
-                    break;
-                }
-            } else {
-                if (b >= a + (int)Math.pow(-2, cnt) && b <= num) {
-                    ans += num - b + 1;
-                    break;
-                }
+            if ((int)Math.pow(2, cnt) >= number) {
+                break;
             }
-
-            ans += (int)Math.pow(2, cnt);
-            num = a + (int)Math.pow(-2, cnt);
             cnt++;
-
-            // System.out.println("cnt : " + cnt + ", ans : " + ans + ", num : " + num);
         }
+
+        for (int i = 0; i < cnt; i++) {
+            ans += (int)Math.pow(2, i);
+        }
+
+        ans += (int)Math.pow(2, cnt-1) + Math.abs(b-a);
+
 
         System.out.println(ans);
     }
