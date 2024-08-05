@@ -12,36 +12,26 @@ public class Main {
 
         int ans = 0;
         int cnt = 0;
-        int num = 0;
 
-        // while (true) {
-        //     if (cnt % 2 == 0) {
-        //         if (b <= a + (int)Math.pow(-2, cnt) && b >= num) {
-        //             ans += b - num + 1;
-        //             break;
-        //         }
-        //     } else {
-        //         if (b >= a + (int)Math.pow(-2, cnt) && b <= num) {
-        //             ans += num - b + 1;
-        //             break;
-        //         }
-        //     }
+        int num = Math.abs(a-b);
 
-        //     ans += (int)Math.pow(2, cnt);
-        //     num = a + (int)Math.pow(-2, cnt);
-        //     cnt++;
-
-        //     // System.out.println("cnt : " + cnt + ", ans : " + ans + ", num : " + num);
-        // }
-
-        int number = Math.abs(a-b);
-
-        while (true) {
-            if ((int)Math.pow(2, cnt) >= number) {
-                break;
+        if (a < b) {
+            while (true) {
+                if ((int)Math.pow(2, cnt) >= num) {
+                    break;
+                }
+            cnt += 2;
             }
-            cnt++;
+        } else {
+            cnt = 1;
+            while (true) {
+                if ((int)Math.pow(2, cnt) >= num) {
+                    break;
+                }
+            cnt += 2;
+            }
         }
+        
 
         for (int i = 0; i < cnt; i++) {
             ans += (int)Math.pow(2, i);
