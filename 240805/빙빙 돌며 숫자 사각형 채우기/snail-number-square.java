@@ -18,14 +18,10 @@ public class Main {
         int[][] arr = new int[n][m];
         int x = 0;
         int y = 0;
+        int cnt = 1;
 
-        if (n == 1 && m == 1) {
-            System.out.println(1);
-            return;
-        }
-
-        for (int i = 1; i <= n*m; i++) {
-            arr[x][y] = i;
+        while(cnt <= n*m) {
+            arr[x][y] = cnt;
 
             if ((v == 0 && y == m-1)) {
                 v++;
@@ -51,6 +47,8 @@ public class Main {
 
             x = nx;
             y = ny;
+
+            cnt++;
         }
 
         for (int i = 0; i < n; i++) {
