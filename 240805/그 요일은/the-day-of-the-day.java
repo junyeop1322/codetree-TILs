@@ -18,7 +18,7 @@ public class Main {
         int idx = -1;
         for (int i = 0; i < days.length; i++) {
             if (days[i].equals(str)) {
-                idx = i;
+                idx = i+1;
                 break;
             }
         }
@@ -32,7 +32,7 @@ public class Main {
 
         int cnt = 0;
         while (cal1.compareTo(cal2) <= 0) {
-            if (cal1.get(Calendar.DAY_OF_WEEK) -1 == idx) {
+            if (cal1.get(Calendar.DAY_OF_WEEK) == idx) {
                 cnt++;
             }
 
