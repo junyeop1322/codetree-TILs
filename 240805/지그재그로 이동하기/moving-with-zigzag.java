@@ -3,43 +3,36 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        // 여기에 코드를 작성해주세요.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-
         int a = Integer.parseInt(st.nextToken());
         int b = Integer.parseInt(st.nextToken());
 
-        int ans = 0;
-        int cnt = 0;
+        boolean direction = true;
+        int distance = 1;
+        int next = 0;
+        int current = a;
+        int result = 0;
 
-        int num = Math.abs(a-b);
+        while (true) {
+            next = direction ? a + distance : a - distance;
 
-        if (a < b) {
-            while (true) {
-                if ((int)Math.pow(2, cnt) >= num) {
-                    break;
-                }
-            cnt += 2;
+            if (direction && current < b && next >= b) {
+                result += b - current;
+                break;
+
+            } else if (!direction && current > b && next <= b) {
+                result += current - b;
+                break;
             }
-        } else {
-            cnt = 1;
-            while (true) {
-                if ((int)Math.pow(2, cnt) >= num) {
-                    break;
-                }
-            cnt += 2;
-            }
-        }
-        
 
-        for (int i = 0; i < cnt; i++) {
-            ans += (int)Math.pow(2, i);
+            result += next > current ? next - current : current - next;
+            
+            current = next;
+            distance *= 2;
+            direction = !direction;
         }
 
-        ans += (int)Math.pow(2, cnt-1) + Math.abs(b-a);
-
-
-        System.out.println(ans);
+        System.out.println(result);
     }
 }
