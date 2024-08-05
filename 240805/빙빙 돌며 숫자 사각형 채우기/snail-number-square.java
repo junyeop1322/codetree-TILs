@@ -22,6 +22,7 @@ public class Main {
 
         while(cnt <= n*m) {
             arr[x][y] = cnt;
+            cnt++;
 
             if ((v == 0 && y == m-1)) {
                 v++;
@@ -48,7 +49,7 @@ public class Main {
             x = nx;
             y = ny;
 
-            cnt++;
+            
         }
 
         for (int i = 0; i < n; i++) {
