@@ -33,9 +33,9 @@ public class Main {
         int cnt = 0;
         int check;
 
-        if (arr[0][1] > brr[0][1]) {
+        if (arr[0][0] > brr[0][0]) {
             check = 1;
-        } else if (arr[0][1] == brr[0][1]) {
+        } else if (arr[0][0] == brr[0][0]) {
             check = 0;
         } else {
             check = 2;
@@ -58,7 +58,6 @@ public class Main {
             cntB++;
 
             if (check == 0 && a != b) {
-                cnt++;
                 if (a > b) {
                     check = 1;
                 } else {
