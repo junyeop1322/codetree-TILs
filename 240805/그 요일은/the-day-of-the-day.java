@@ -26,10 +26,6 @@ public class Main {
         Calendar cal1 = new GregorianCalendar(2024, m1-1, d1);
         Calendar cal2 = new GregorianCalendar(2024, m2-1, d2);
 
-        while(cal1.get(Calendar.DAY_OF_WEEK) != Calendar.MONDAY) {
-            cal1.add(Calendar.DAY_OF_MONTH, -1);
-        }
-
         int cnt = 0;
         while (cal1.compareTo(cal2) <= 0) {
             if (cal1.get(Calendar.DAY_OF_WEEK) == idx) {
