@@ -20,9 +20,12 @@ public class Main {
         int y = 0;
         int cnt = 1;
 
-        while(cnt <= n*m) {
+        while(true) {
             arr[x][y] = cnt;
             cnt++;
+            if (cnt > n*m) {
+                break;
+            }
 
             if ((v == 0 && y == m-1)) {
                 v++;
