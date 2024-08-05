@@ -13,8 +13,9 @@ public class Main {
         int d2 = Integer.parseInt(st.nextToken());
 
         String str = br.readLine();
-        String[] days = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
-
+        String[] days = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
+        int[] month = {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+ 
         int idx = -1;
         for (int i = 0; i < days.length; i++) {
             if (days[i].equals(str)) {
@@ -22,17 +23,22 @@ public class Main {
                 break;
             }
         }
+        
+        int d = 0;
 
-        Calendar cal1 = new GregorianCalendar(2024, m1-1, d1);
-        Calendar cal2 = new GregorianCalendar(2024, m2-1, d2);
+        for (int i = m1; i <= m2; i++) {
+            d += month[i];
+        }
+
+        d = d - (d1 - 1);
+        d = d - (month[m2] - d2 + 1);
 
         int cnt = 0;
-        while (cal1.compareTo(cal2) <= 0) {
-            if (cal1.get(Calendar.DAY_OF_WEEK) == idx) {
+
+        for (int i = 0; i <= d; i++) {
+            if (i % 7 == idx) {
                 cnt++;
             }
-
-            cal1.add(Calendar.DAY_OF_MONTH, 1);
         }
 
         System.out.println(cnt);
