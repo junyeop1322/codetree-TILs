@@ -23,10 +23,12 @@ public class Main {
                 sb.append("0");
             }
 
-            if (sb.length() > 4) {
+            if (sb.length() > 5) {
                 break;
             }
         }
+
+        sb.delete(sb.length()-1, sb.length());
 
         System.out.println(strNum + sb.toString());
     }
