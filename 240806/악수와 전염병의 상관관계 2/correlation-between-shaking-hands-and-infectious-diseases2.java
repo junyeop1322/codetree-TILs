@@ -48,18 +48,25 @@ public class Main {
             int y = user[i].b;
 
             if (arr[x] == 1 || arr[y] == 1) {
-                if (cnt[x] != k && cnt[y] != k) {
-                    if (arr[x] == 1 && arr[y] == 0) {
+                if (arr[x] == 1 && arr[y] == 1) {
+                    if (cnt[x] != k && cnt[y] != k) {
                         cnt[x]++;
-                    } else if (arr[x] == 0 && arr[y] == 1) {
                         cnt[y]++;
-                    } else if (arr[x] == 1 && arr[y] == 1) {
+                    } else if (cnt[x] == k && cnt[y] != k) {
+                        cnt[y]++;
+                    } else if (cnt[x] != k && cnt[y] == k) {
                         cnt[x]++;
+                    }
+                } else if (arr[x] != 1 && arr[y] == 1) {
+                    if (cnt[y] != k) {
+                        arr[x] = 1;
                         cnt[y]++;
                     }
-
-                    arr[x] = 1;
-                    arr[y] = 1;
+                } else if (arr[x] == 1 && arr[y] != 1) {
+                    if (cnt[x] != k) {
+                        arr[y] = 1;
+                        cnt[x]++;
+                    }
                 }
 
             }
