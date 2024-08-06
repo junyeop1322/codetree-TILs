@@ -49,8 +49,14 @@ public class Main {
 
             if (arr[x] == 1 || arr[y] == 1) {
                 if (cnt[x] != k && cnt[y] != k) {
-                    cnt[x]++;
-                    cnt[y]++;
+                    if (arr[x] == 1 && arr[y] == 0) {
+                        cnt[x]++;
+                    } else if (arr[x] == 0 && arr[y] == 1) {
+                        cnt[y]++;
+                    } else if (arr[x] == 1 && arr[y] == 1) {
+                        cnt[x]++;
+                        cnt[y]++;
+                    }
 
                     arr[x] = 1;
                     arr[y] = 1;
