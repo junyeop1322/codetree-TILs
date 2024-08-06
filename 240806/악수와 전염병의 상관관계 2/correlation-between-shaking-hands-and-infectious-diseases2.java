@@ -25,6 +25,7 @@ public class Main {
         int t = Integer.parseInt(st.nextToken());
 
         int[] arr = new int[n];
+        int[] cnt = new int[n];
 
         arr[p-1] = 1;
         User[] user = new User[t];
@@ -42,30 +43,24 @@ public class Main {
             return o1.time - o2.time;
         });
 
-        int cnt = 0;
         for (int i = 0; i < t; i++) {
             int x = user[i].a;
             int y = user[i].b;
 
-            if (arr[x] != 0 || arr[y] != 0) {
-                if (arr[x] != k && arr[y] != k) {
-                    arr[x]++;
-                    arr[y]++;
+            if (arr[x] == 1 || arr[y] == 1) {
+                if (cnt[x] != k && cnt[y] != k) {
+                    cnt[x]++;
+                    cnt[y]++;
+
+                    arr[x] = 1;
+                    arr[y] = 1;
                 }
 
-            }
-
-            if (cnt == k) {
-                break;
             }
         }
 
         for (int i = 0; i < n; i++) {
-            if (arr[i] != 0) {
-                System.out.print(1);
-            } else {
-                System.out.print(0);
-            }
+            System.out.print(arr[i]);
         }
     }
 }
