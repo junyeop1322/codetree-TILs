@@ -38,7 +38,7 @@ public class Main {
         }
 
         num = n+1;
-        
+
         while (true) {
             boolean check = true;
 
@@ -55,7 +55,7 @@ public class Main {
             }
             num++;
 
-            if (n - ans1 == ans2 - n) {
+            if ((n - ans1) == (ans2 - n)) {
                 System.out.println(ans1 + " " + ans2);
             } else {
                 if (n - ans1 < ans2 - n) {
