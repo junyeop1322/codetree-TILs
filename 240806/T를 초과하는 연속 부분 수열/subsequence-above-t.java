@@ -9,12 +9,27 @@ public class Main {
         int n = Integer.parseInt(st.nextToken());
         int t = Integer.parseInt(st.nextToken());
 
+        int[] arr = new int[n];
+        boolean check = false;
+
+        st = new StringTokenizer(br.readLine(), " ");
+        for (int i = 0; i < n; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+            if (arr[i] > t) {
+                check = true;
+            }
+        }
+
+        if (!check) {
+            System.out.println(0);
+            return;
+        }
+        
         int cnt = 1;
         int max = 0;
-        st = new StringTokenizer(br.readLine(), " ");
-        int num = Integer.parseInt(st.nextToken());
-        for (int i = 0; i < n-1; i++) {
-            int number = Integer.parseInt(st.nextToken());
+        int num = arr[0];
+        for (int i = 1; i < n; i++) {
+            int number = arr[i];
             if (num > t && number > t && num < number) {
                 cnt++;
             } else {
@@ -24,6 +39,7 @@ public class Main {
 
             num = number;
         }
+        max = Math.max(cnt, max);
 
         System.out.println(max);
     }
