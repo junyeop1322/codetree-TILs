@@ -53,18 +53,17 @@ public class Main {
                 ans2 = num;
                 break;
             }
-            num++;
+            num++;   
+        }
 
-            if ((n - ans1) == (ans2 - n)) {
-                System.out.println(ans1 + " " + ans2);
+        if ((n - ans1) == (ans2 - n)) {
+            System.out.println(ans1 + " " + ans2);
+        } else {
+            if (n - ans1 < ans2 - n) {
+                System.out.println(ans1);
             } else {
-                if (n - ans1 < ans2 - n) {
-                    System.out.println(ans1);
-                } else {
-                    System.out.println(ans2);
-                }
-            }    
-            
+                System.out.println(ans2);
+            }
         }
     }
 }
