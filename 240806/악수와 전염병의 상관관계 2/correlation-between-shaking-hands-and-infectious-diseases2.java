@@ -47,10 +47,12 @@ public class Main {
             int x = user[i].a;
             int y = user[i].b;
 
-            if (arr[x] == 1 || arr[y] == 1) {
-                arr[x] = 1;
-                arr[y] = 1;
-                cnt++;
+            if (arr[x] != 0 || arr[y] != 0) {
+                if (arr[x] != k && arr[y] != k) {
+                    arr[x]++;
+                    arr[y]++;
+                }
+
             }
 
             if (cnt == k) {
@@ -59,7 +61,11 @@ public class Main {
         }
 
         for (int i = 0; i < n; i++) {
-            System.out.print(arr[i]);
+            if (arr[i] != 0) {
+                System.out.print(1);
+            } else {
+                System.out.print(0);
+            }
         }
     }
 }
