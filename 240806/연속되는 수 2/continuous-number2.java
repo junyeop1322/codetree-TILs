@@ -9,7 +9,7 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
 
         int cnt = 1;
-        int max = 0;
+        int max = 1;
 
         int num = Integer.parseInt(br.readLine());
         for (int i = 0; i < n-1; i++) {
