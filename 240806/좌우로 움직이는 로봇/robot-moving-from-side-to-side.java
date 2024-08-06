@@ -33,7 +33,7 @@ public class Main {
             roB[i] = new Ro(Integer.parseInt(st.nextToken()), st.nextToken());
         }
 
-        int cnt = 1;
+        int cnt = 0;
 
         int idxA = 0;
         int idxB = 0;
@@ -57,20 +57,24 @@ public class Main {
                 check = true;
             }
             
-            if (av.equals("L")) {
-                a--;
-                cntA++;
-            } else {
-                a++;
-                cntA++;
+            if (cntA != -1) { 
+                if (av.equals("L")) {
+                    a--;
+                    cntA++;
+                } else {
+                    a++;
+                    cntA++;
+                }
             }
 
-            if (bv.equals("L")) {
-                b--;
-                cntB++;
-            } else {
-                b++;
-                cntB++;
+            if (cntB != -1) {
+                if (bv.equals("L")) {
+                    b--;
+                    cntB++;
+                } else {
+                    b++;
+                    cntB++;
+                }
             }
 
             // 처음에는 다른 위치에 있다가 같은 위치가 되면 cnt++
@@ -88,7 +92,17 @@ public class Main {
                 cntB = 0;
             }
 
-            if (idxA == n || idxB == m) {
+            if (idxA == n) {
+                idxA = 0;
+                cntA = -1;
+            }
+
+            if (idxB == m) {
+                idxB = 0;
+                cntB = -1;
+            }
+
+            if (cntA == -1 && cntB == -1) {
                 break;
             }
         }
