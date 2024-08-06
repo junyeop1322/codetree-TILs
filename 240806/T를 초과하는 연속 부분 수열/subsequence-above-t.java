@@ -30,7 +30,7 @@ public class Main {
         int num = arr[0];
         for (int i = 1; i < n; i++) {
             int number = arr[i];
-            if (num > t && number > t && num < number) {
+            if (num > t && number > t) {
                 cnt++;
             } else {
                 max = Math.max(max, cnt);
