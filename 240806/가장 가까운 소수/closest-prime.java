@@ -15,7 +15,7 @@ public class Main {
             return;
         }
 
-        int num = n-1;
+        int num = n;
 
         int ans1 = 0;
         int ans2 = 0;
