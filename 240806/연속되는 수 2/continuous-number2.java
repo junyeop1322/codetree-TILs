@@ -24,6 +24,8 @@ public class Main {
             }
         }
 
+        max = Math.max(cnt, max);
+
         System.out.println(max);
     }
 }
