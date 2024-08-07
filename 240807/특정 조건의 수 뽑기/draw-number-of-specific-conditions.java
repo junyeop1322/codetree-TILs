@@ -28,6 +28,10 @@ public class Main {
             }
         }
 
+        if (ans2 == Integer.MAX_VALUE) {
+            ans2 = -1;
+        }
+
         System.out.println(ans1 + " " + ans2);
     }
 }
