@@ -26,6 +26,8 @@ public class Main {
             }
         }
 
+        System.out.println(0);
+
     }
 
     static boolean func(int n, int x, int y) {
