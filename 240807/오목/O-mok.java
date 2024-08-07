@@ -49,8 +49,10 @@ public class Main {
                 sx = nx;
                 sy = ny;
             } else {
-                check = false;
-                break;
+                if (i != 4) {
+                    check = false;
+                    break;
+                }
             }
         }
 
@@ -77,8 +79,10 @@ public class Main {
                 sx = nx;
                 sy = ny;
             } else {
-                check = false;
-                break;
+                if (i != 4) {
+                    check = false;
+                    break;
+                }
             }
         }
 
@@ -105,8 +109,10 @@ public class Main {
                 sx = nx;
                 sy = ny;
             } else {
-                check = false;
-                break;
+                if (i != 4) {
+                    check = false;
+                    break;
+                }
             }
         }
 
@@ -133,8 +139,10 @@ public class Main {
                 sx = nx;
                 sy = ny;
             } else {
-                check = false;
-                break;
+                if (i != 4) {
+                    check = false;
+                    break;
+                }
             }
         }
 
