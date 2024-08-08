@@ -35,7 +35,7 @@ public class Main {
                         cnt2++;
                     }
 
-                    if (arr[j] != 0 && cnt1 == cnt2) {
+                    if (arr[j] != 0 && (cnt1 == cnt2 || (cnt1 != 0 && cnt2 ==0) || (cnt1 == 0 && cnt2 != 0))) {
                         ans = Math.max(ans, j-i);
                     }
                 }
