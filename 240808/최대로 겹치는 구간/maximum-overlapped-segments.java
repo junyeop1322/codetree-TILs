@@ -15,11 +15,9 @@ public class Main {
             int x = Integer.parseInt(st.nextToken()) + 1;
             int y = Integer.parseInt(st.nextToken()) - 1;
 
-            if (x != 101 && y != -101) {
-                if (x <= y) {
-                    for (int j = x+100; j <= y+100; j++) {
-                        arr[j]++;
-                    }
+            if (x <= y) {
+                for (int j = x+100; j <= y+100; j++) {
+                    arr[j]++;
                 }
             }
 
@@ -27,8 +25,10 @@ public class Main {
 
         int max = 0;
         for (int i = 0; i < 201; i++) {
+            // System.out.print(arr[i] + " ");
             max = Math.max(max, arr[i]);
         }
+        System.out.println();
 
         System.out.println(max);
     }
