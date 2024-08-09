@@ -21,6 +21,7 @@ public class Main {
         int ans = 0;
         for (int i = 0; i < n; i++) {
             ans = Math.max(ans, bomb(i));
+            // System.out.println("i : " + i + " /------------");
         }
 
         System.out.println(ans);
@@ -45,16 +46,18 @@ public class Main {
             boolean chk2 = false;
 
             int x = 0;
-            int y = 0;
+            int y = Integer.MAX_VALUE;
 
             for (int i = 0; i < n; i++) {
                 if (!chk3 && x1+cnt >= arr[i] && x1 < arr[i]) {
-                    x = arr[i];
+                    // System.out.println("arr[i] : " + arr[i] + ", x1 : " + x1);
+                    x = Math.max(x, arr[i]);
                     chk1 = true;
                 }
 
                 if (!chk4 && x2-cnt <= arr[i] && x2 > arr[i]) {
-                    y = arr[i];
+                    // System.out.println("arr[i] : " + arr[i] + ", x2 : " + x2);
+                    y = Math.min(y, arr[i]);
                     chk2 = true;
                 }
             }
