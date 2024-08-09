@@ -19,11 +19,13 @@ public class Main {
 
         int ans = 0;
 
-        for(int i = 0; i < n-1; i++) {
+        for(int i = 0; i < n; i++) {
 
             boolean overlap = false;
 
-            for(int j = i+1; j < n; j++) {
+            for(int j = 0; j < n; j++) {
+                if(j == i) continue;
+
                 if((x1[i] <= x1[j] && x2[i] >= x2[j]) || (x1[i] >= x1[j] && x2[i] <= x2[j])) {
                     overlap = true;
                     break;
