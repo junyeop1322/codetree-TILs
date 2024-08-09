@@ -19,14 +19,20 @@ public class Main {
 
         Arrays.sort(arr);
 
-        System.out.println(fun(arr, price, n)-1);
+        int ans = 0;
+
+        for (int i = 0; i < n; i++) {
+            ans = Math.max(fun(arr, price, n, i), ans);
+        }
+
+        System.out.println(ans);
 
     }
 
-    static int fun(int[] arr, int p, int n) {
+    static int fun(int[] arr, int price, int n, int idx) {
         int cnt = 0;
+        int p = price;
 
-        int idx = 0;
         for (int i = 0; i < n; i++) {
             if (p < 0) {
                 break;
@@ -38,8 +44,10 @@ public class Main {
                 p -= arr[i];
             }
 
-            idx++;
-            cnt++;
+            if (p >= 0) {
+                // System.out.println("arr[i] : " + arr[i] + ", p : " + p);
+                cnt++;
+            }
         }
 
         return cnt;
