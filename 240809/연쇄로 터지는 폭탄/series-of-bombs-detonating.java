@@ -52,25 +52,25 @@ public class Main {
                 if (!chk3 && x1+cnt >= arr[i] && x1 < arr[i]) {
                     // System.out.println("arr[i] : " + arr[i] + ", x1 : " + x1);
                     x = Math.max(x, arr[i]);
+                    count++;
                     chk1 = true;
                 }
 
                 if (!chk4 && x2-cnt <= arr[i] && x2 > arr[i]) {
                     // System.out.println("arr[i] : " + arr[i] + ", x2 : " + x2);
                     y = Math.min(y, arr[i]);
+                    count++;
                     chk2 = true;
                 }
             }
 
             if (chk1) {
                 x1 = x;
-                count++;
             } else {
                 chk3 = true;
             }
             if (chk2) {
                 x2 = y;
-                count++;
             } else {
                 chk4 = true;
             }
