@@ -22,11 +22,15 @@ public class Main {
             int sum2 = o2[0]+o2[1];
 
             if (sum1 == sum2) {
-                return o1[0] - o2[0];
+                return o2[0] - o1[0];
             } else {
                 return sum1 - sum2;
             }
         });
+
+        // for (int i = 0; i < n; i++) {
+        //     System.out.println("p1 : " + arr[i][0] + ", p2 : " + arr[i][1]);
+        // }
 
         int ans = 0;
 
