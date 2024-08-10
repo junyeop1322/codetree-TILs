@@ -17,44 +17,36 @@ public class Main {
             arr[i][1] = Integer.parseInt(st.nextToken());
         }
 
-        Arrays.sort(arr, (o1, o2) -> {
-            int sum1 = o1[0]+o1[1];
-            int sum2 = o2[0]+o2[1];
-
-            if (sum1 == sum2) {
-                return o2[0] - o1[0];
-            } else {
-                return sum1 - sum2;
-            }
-        });
-
-        // for (int i = 0; i < n; i++) {
-        //     System.out.println("p1 : " + arr[i][0] + ", p2 : " + arr[i][1]);
-        // }
-
-        int ans = 0;
+        int maxStudents = 0;
 
         for (int i = 0; i < n; i++) {
-            int cnt = 0;
-            int price = p;
-            for (int j = 0; j < n; j++) {
-                if (price < 0) {
-                    cnt = j;
-                    break;
-                }
-                int p1 = arr[j][0];
-                int p2 = arr[j][1];
-                if (i == j) {
-                    p1 /= 2;
-                }
+            int[] totalCosts = new int[n];
+            int total = 0;
 
-                price = price - (p1 + p2);
+            for (int j = 0; j < n; j++) {
+                if (i == j) {
+                    totalCosts[j] = arr[j][0] / 2 + arr[j][1];  // 쿠폰 사용
+                } else {
+                    totalCosts[j] = arr[j][0] + arr[j][1];  // 원래 가격
+                }
             }
 
-            ans = Math.max(cnt, ans);
+            Arrays.sort(totalCosts);
+            int count = 0;
+
+            for (int cost : totalCosts) {
+                if (total + cost <= p) {
+                    total += cost;
+                    count++;
+                } else {
+                    break;
+                }
+            }
+
+            maxStudents = Math.max(maxStudents, count);
         }
 
-        System.out.println(ans);
+        System.out.println(maxStudents);
 
     }
 }
