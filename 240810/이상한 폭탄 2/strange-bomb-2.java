@@ -21,7 +21,7 @@ public class Main {
         for (int i = 0; i < n; i++) {
             int cnt = fun(arr, arr[i], k);
 
-            if (cnt != 0) {
+            if (cnt != 1) {
                 if (cnt > max) {
                     max = cnt;
                     ans = arr[i];
