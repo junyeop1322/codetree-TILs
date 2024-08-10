@@ -15,17 +15,13 @@ public class Main {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
-        int max = -1;
         int ans = -1;
 
         for (int i = 0; i < n; i++) {
             int cnt = fun(arr, i, k);
 
             if (cnt != 1) {
-                if (cnt >= max) {
-                    max = cnt;
-                    ans = arr[i];
-                }
+                    ans = Math.max(ans, arr[i]);
             }
         }
 
