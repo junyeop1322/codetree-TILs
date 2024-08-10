@@ -15,6 +15,8 @@ public class Main {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
+        Arrays.sort(arr);
+
         int max = -1;
         int ans = -1;
 
