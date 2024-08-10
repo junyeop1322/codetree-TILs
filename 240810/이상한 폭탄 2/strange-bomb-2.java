@@ -19,10 +19,10 @@ public class Main {
         int ans = -1;
 
         for (int i = 0; i < n; i++) {
-            int cnt = fun(arr, arr[i], k);
+            int cnt = fun(arr, i, k);
 
             if (cnt != 1) {
-                if (cnt > max) {
+                if (cnt >= max) {
                     max = cnt;
                     ans = arr[i];
                 }
@@ -32,11 +32,15 @@ public class Main {
         System.out.println(ans);
     }
 
-    static int fun(int[] arr, int num, int k) {
+    static int fun(int[] arr, int n, int k) {
         int cnt = 0;
+        // System.out.println("----------- n : " + n);
+
+        int num = arr[n];
 
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] >= num-k && arr[i] <= num+k) {
+            if (i >= n-k && i <= n+k && arr[i] == num) {
+                // System.out.println("arr[i] : " + arr[i]);
                 cnt++;
             }
         }
