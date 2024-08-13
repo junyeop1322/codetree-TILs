@@ -16,21 +16,15 @@ public class Main {
 
         ans = 0;
 
-        func(a, b, 0, 0);
+        for (int i = 0; i * a <= c; i++) {
+            int cnt = a * i;
+
+            int num = (c - cnt) / b;
+            cnt += num * b;
+
+            ans = Math.max(ans, cnt);
+        }
 
         System.out.println(ans);
-    }
-
-    static void func(int a, int b, int ct1, int ct2) {
-        int num = (a * ct1) + (b * ct2);
-
-        if (num > c) {
-            return;
-        } else {
-            ans = Math.max(ans, num);
-
-            func(a, b, ct1+1, ct2);
-            func(a, b, ct1, ct2+1);
-        }
     }
 }
