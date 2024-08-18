@@ -24,7 +24,11 @@ public class Main {
 
         int ans = 0;
         for (int i = 0; i < n; i++) {
-            ans = Math.max(ans, Math.max(row(i), cul(i)));
+            ans = Math.max(ans, row(i));
+        }
+        
+        for (int j = 0; j < m; j++) {
+            ans = Math.max(ans, cul(j));
         }
         
         for (int i = 0; i < n; i++) {
@@ -90,7 +94,7 @@ public class Main {
     static int row (int num) {
         int sum = 0;
 
-        for (int i = 0; i <= n-3; i++) {
+        for (int i = 0; i <= m-3; i++) {
             int s = 0;
 
             for (int j = i; j < i+3; j++) {
