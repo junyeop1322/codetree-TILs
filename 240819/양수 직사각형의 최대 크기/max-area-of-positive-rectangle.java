@@ -36,6 +36,7 @@ public class Main {
         }
 
         boolean check = false;
+        boolean chk = false;
 
         for (int i = 0; i <= n - x; i++) {
             for (int j = 0; j <= m - y; j++) {
@@ -49,15 +50,16 @@ public class Main {
                 }
 
                 if (check) {
-                    // System.out.println("x : " + x + ", y : " + y + ", ans = " + x*y);
+                    chk = true;
                     ans = Math.max(ans, x * y);
                 }
             }
 
         }
 
-
-        func(x+1, y);
-        func(x, y+1);
+        if (chk) {
+            func(x+1, y);
+            func(x, y+1);
+        }
     }
 }
