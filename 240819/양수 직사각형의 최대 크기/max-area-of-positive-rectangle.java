@@ -42,7 +42,7 @@ public class Main {
                 check = true;
                 for (int k = i; k < i + x; k++) {
                     for (int l = j; l < j + y; l++) {
-                        if (arr[k][l] < 0) {
+                        if (arr[k][l] <= 0) {
                             check = false;
                         }
                     }
