@@ -47,10 +47,18 @@ public class Main {
         for (int i = n-1; i >= 1; i--) {
             for (int j = 0; j < n; j++) {
                 if (arr[i][j] == 0) {
-                    for (int k = i; k >= 1; k--) {
-                        arr[k][j] = arr[k-1][j];
+                    for (int k = i; k >= 0; k--) {
+                        if (arr[k][j] != 0) {
+                            for (int l = i; l >= 0; l--) {
+                                if (arr[l][j] == 0) {
+                                    arr[l][j] = arr[k][j];
+                                    arr[k][j] = 0;
+
+                                    break;
+                                }
+                            }
+                        }
                     }
-                    arr[0][j] = 0;
                 }
             }
         }
