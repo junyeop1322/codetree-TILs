@@ -49,6 +49,7 @@ public class Main {
                 }
 
                 if (check) {
+                    // System.out.println("x : " + x + ", y : " + y + ", ans = " + x*y);
                     ans = Math.max(ans, x * y);
                 }
             }
