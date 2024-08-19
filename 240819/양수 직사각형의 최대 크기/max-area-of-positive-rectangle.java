@@ -50,16 +50,15 @@ public class Main {
                 }
 
                 if (check) {
-                    chk = true;
                     ans = Math.max(ans, x * y);
+
+                    func(x+1, y);
+                    func(x, y+1);
+
+                    return;
                 }
             }
 
-        }
-
-        if (chk) {
-            func(x+1, y);
-            func(x, y+1);
         }
     }
 }
