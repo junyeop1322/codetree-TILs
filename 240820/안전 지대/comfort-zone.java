@@ -37,7 +37,7 @@ public class Main {
         int ans1 = 0;
         int ans2 = 0;
         
-        for (int k = max; k >= min; k--) {
+        for (int k = 100; k >= 1; k--) {
             int cnt = 0;
             visited = new boolean[n][m];
             for (int i = 0; i < n; i++) {
