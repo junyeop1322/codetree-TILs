@@ -37,12 +37,12 @@ public class Main {
         int ans1 = 0;
         int ans2 = 0;
         
-        for (int k = min; k <= max; k++) {
+        for (int k = max; k >= min; k--) {
             int cnt = 0;
             visited = new boolean[n][m];
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < m; j++) {
-                    if (arr[i][j] <= k && !visited[i][j]) {
+                    if (arr[i][j] > k && !visited[i][j]) {
                         dfs(i, j, k);
                         cnt++;
                     }
@@ -66,7 +66,7 @@ public class Main {
             int ny = y + dy[i];
 
             if (nx >= 0 && ny >= 0 && nx < n && ny < m) {
-                if (arr[nx][ny] <= num && !visited[nx][ny]) {
+                if (arr[nx][ny] > num && !visited[nx][ny]) {
                     dfs(nx, ny, num);
                 }
             }
