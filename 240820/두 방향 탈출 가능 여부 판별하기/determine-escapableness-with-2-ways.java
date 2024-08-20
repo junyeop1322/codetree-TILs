@@ -6,6 +6,7 @@ public class Main {
     static int n, m;
     static int[][] arr;
     static boolean check;
+    static boolean[][] visited;
 
     static int[] dx = {1, 0};
     static int[] dy = {0, 1};
@@ -19,6 +20,7 @@ public class Main {
         m = Integer.parseInt(st.nextToken());
 
         arr = new int[n][m];
+        visited = new boolean[n][m];
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine(), " ");
             for (int j = 0; j < m; j++) {
@@ -37,10 +39,11 @@ public class Main {
     }
 
     static void dfs(int x, int y) {
+        visited[x][y] = true;
         if (check) {
             return;
         }
-        
+
         if (x == n-1 && y == m-1) {
             check = true;
             return;
@@ -51,7 +54,7 @@ public class Main {
             int ny = y + dy[i];
 
             if (nx < n && ny < m) {
-                if (arr[nx][ny] == 1) {
+                if (arr[nx][ny] == 1 && !visited[nx][ny]) {
                     dfs(nx, ny);
                 }
             }
