@@ -37,6 +37,10 @@ public class Main {
     }
 
     static void dfs(int x, int y) {
+        if (check) {
+            return;
+        }
+        
         if (x == n-1 && y == m-1) {
             check = true;
             return;
