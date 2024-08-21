@@ -35,13 +35,12 @@ public class Main {
 
     static void bfs() {
         q.add(new int[] {0, 0});
+        visited[0][0] = true;
 
         while(!q.isEmpty()) {
             int[] a = q.poll();
             int x = a[0];
             int y = a[1];
-
-            visited[x][y] = true;
 
             if (x == n-1 && y == m-1) {
                 System.out.println(1);
@@ -55,6 +54,7 @@ public class Main {
                 if (nx >= 0 && ny >= 0 && nx < n && ny < m) {
                     if (arr[nx][ny] == 1 && !visited[nx][ny]) {
                         q.add(new int[] {nx, ny});
+                        visited[nx][ny] = true;
                     }
                 }
             }
