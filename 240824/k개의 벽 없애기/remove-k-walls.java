@@ -189,6 +189,6 @@ public class Main {
             }
         }
 
-        return -1;
+        return Integer.MAX_VALUE;
     }
 }
