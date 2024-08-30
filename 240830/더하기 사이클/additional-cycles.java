@@ -10,7 +10,7 @@ public class Main {
         int n = Integer.parseInt(st.nextToken());
 
         String str = Integer.toString(n);
-        int cnt = 1;
+        int cnt = 0;
 
         int num = n;
 
@@ -19,13 +19,17 @@ public class Main {
             
             number += (num / 10) + (num % 10);
 
+            // System.out.println(number);
+
             String strA = Integer.toString(number);
             int a = strA.charAt(strA.length() - 1) - '0';
 
             String strB = Integer.toString(num);
             int b = strB.charAt(strB.length() - 1) - '0';
+
+            // System.out.println("A : " + a + ", B :" + b);
             
-            num = 10*a + b;
+            num = a + 10 * b;
             cnt++;
 
             if (num == n) {
