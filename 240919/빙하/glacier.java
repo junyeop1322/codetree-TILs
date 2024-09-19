@@ -51,6 +51,8 @@ public class Main {
         q.add(new int[]{0, 0});
 
         visited = new boolean[n][m];
+        visited[0][0] = true;
+        
         ice = new int[n][m];
 
         while(!q.isEmpty()) {
@@ -58,7 +60,6 @@ public class Main {
 
             int x = a[0];
             int y = a[1];
-            visited[x][y] = true;
 
             for (int i = 0; i < 4; i++) {
                 int nx = x + dx[i];
@@ -67,6 +68,7 @@ public class Main {
                 if (nx >= 0 && ny >= 0 && nx < n && ny < m) {
                     if (arr[nx][ny] == 0 && !visited[nx][ny]) {
                         q.add(new int[]{nx, ny});
+                        visited[nx][ny] = true;
                     } else {
                         ice[nx][ny] = 1;
                     }
