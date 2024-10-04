@@ -18,11 +18,19 @@ public class Main {
             brr[i] = Integer.parseInt(st.nextToken());
         }
 
-        int cnt = 0;
+        int cnt = 1;
         int cur = brr[n-1];
+        int num1 = brr[n-1];
+        int num2 = 0;
 
         for (int i = n-2; i >= 0; i--) {
-            if (brr[i] > cur) {
+            num2 = brr[i];
+
+            if (num1 < num2) {
+                continue;
+            }
+
+            if (num2 <= cur) {
                 cnt++;
                 cur = brr[i];
             }
