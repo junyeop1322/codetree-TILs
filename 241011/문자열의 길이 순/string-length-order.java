@@ -14,7 +14,16 @@ public class Main {
             arr[i] = br.readLine();
         }
 
-        Arrays.sort(arr, (String s1, String s2) -> s1.length() - s2.length());
+        Arrays.sort(arr, (o1, o2) -> {
+			if (o1.length() == o2.length()) {
+				for (int i = 0; i < o1.length(); i++) {
+					if (o1.charAt(i) != o2.charAt(i)) {
+						return o1.charAt(i) - o2.charAt(i);
+					}
+				}
+			}
+			return o1.length() - o2.length();
+		});
 
         for (int i = 0; i < n; i++) {
             System.out.println(arr[i]);
