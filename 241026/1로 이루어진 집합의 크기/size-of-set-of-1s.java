@@ -27,7 +27,7 @@ public class Main {
         int ans = 0;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                if (arr[i][j] == 0) {
+                if (arr[i][j] == 0 && check(i, j, arr)) {
                     arr[i][j] = 1;
                     ans = Math.max(ans, bfs(arr, i, j));
                     arr[i][j] = 0;
@@ -40,6 +40,24 @@ public class Main {
         }
 
         System.out.println(ans);
+
+    }
+
+    static boolean check(int x, int y, int[][] arr) {
+        for (int i = 0; i < 4; i++) {
+            int nx = x + dx[i];
+            int ny = y + dy[i];
+
+            if (nx < 0 || ny < 0 || nx >= n || ny >= m) {
+                continue;
+            }
+
+            if (arr[nx][ny] == 1) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     static int bfs(int[][] arr, int x, int y) {
