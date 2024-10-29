@@ -22,6 +22,6 @@ public class Main {
             dp[i][3] = (dp[i-3][1] + dp[i-3][2]) % 1000000007;
         }
 
-        System.out.println(dp[n][1] + dp[n][2] + dp[n][3]);
+        System.out.println((dp[n][1] + dp[n][2] + dp[n][3]) % 1000000007);
     }
 }
