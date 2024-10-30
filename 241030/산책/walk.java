@@ -15,8 +15,8 @@ public class Main {
             map.put(input[1], map.getOrDefault(input[1], 0) + 1);
         }
 
-        int ans = 1;
-        for (int cnt : map.values()) {
+        long ans = 1;
+        for (long cnt : map.values()) {
             ans *= (cnt+1);
         }
 
