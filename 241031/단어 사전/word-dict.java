@@ -10,7 +10,7 @@ public class Main {
 
         Arrays.sort(str);
 
-        Set<String> set = new HashSet<>();
+        Set<String> set = new TreeSet<>();
 
         for (int i = 0; i < str.length; i++) {
             set.add(str[i]);
