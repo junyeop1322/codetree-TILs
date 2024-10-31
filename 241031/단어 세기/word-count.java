@@ -21,11 +21,8 @@ public class Main {
                 map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
             }
 
-            List<String> keyList = new ArrayList<>(map.keySet());
-            // Collections.sort(keyList);
-
-            for (int i = 0; i < keyList.size(); i++) {
-                sb.append(keyList.get(i) + " : " + map.get(keyList.get(i)) + "\n");
+            for (String key : map.keySet()) {
+                sb.append(key + " : " + map.get(key) + "\n");
             }
 
         }
