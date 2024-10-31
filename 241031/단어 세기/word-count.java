@@ -22,7 +22,7 @@ public class Main {
             }
 
             List<String> keyList = new ArrayList<>(map.keySet());
-            Collections.sort(keyList);
+            // Collections.sort(keyList);
 
             for (int i = 0; i < keyList.size(); i++) {
                 sb.append(keyList.get(i) + " : " + map.get(keyList.get(i)) + "\n");
