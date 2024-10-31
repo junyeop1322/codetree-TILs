@@ -7,8 +7,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
-        String[] alpa = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
-        int[] num = new int[26];
+        Map<String, Integer> map = new HashMap<>();
 
         while(true) {
             String str = br.readLine();
@@ -17,20 +16,18 @@ public class Main {
             }
 
             String[] arr = str.split(" ");
-            Arrays.sort(arr);
+            
             for (int i = 0; i < arr.length; i++) {
-                for (int j = 0; j < 26; j++) {
-                    if (arr[i].equals(alpa[j])) {
-                        num[j]++;
-                    }
-                }
+                map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
             }
 
-            for (int i = 0; i < 26; i++) {
-                if (num[i] != 0) {
-                    sb.append(alpa[i] + " : " + num[i] + "\n");
-                }
+            List<String> keyList = new ArrayList<>(map.keySet());
+            Collections.sort(keyList);
+
+            for (int i = 0; i < keyList.size(); i++) {
+                sb.append(keyList.get(i) + " : " + map.get(keyList.get(i)) + "\n");
             }
+
         }
 
         System.out.println(sb.toString());
