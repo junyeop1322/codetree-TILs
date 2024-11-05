@@ -18,6 +18,10 @@ public class Main {
                 map[i][j] = str.charAt(j);
             }
         }
+        if (map[7][0] == '#') {
+            System.out.println(0);
+            return;
+        }
 
         map[7][0] = '!';
 
