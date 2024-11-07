@@ -27,8 +27,7 @@ public class Main {
             }
             max = Math.max(max, dp[i]);
         }
-    
 
-        System.out.println(dp[n]);
+        System.out.println(max);
     }
 }
