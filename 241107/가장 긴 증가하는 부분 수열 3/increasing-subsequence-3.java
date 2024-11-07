@@ -8,22 +8,24 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
         int n = Integer.parseInt(st.nextToken());
-        int[] arr = new int[n];
-        st = new StringTokenizer(br.readLine(), " ");
-        for (int i = 0; i < n; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
-        }
-
+        int[] arr = new int[n+1];
         int[] dp = new int[n+1];
 
-        dp[1] = 1;
+        st = new StringTokenizer(br.readLine(), " ");
+        for (int i = 1; i <= n; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+            dp[i] = 1;
+        }
 
-        for (int i = 2; i <= n; i++) {
-            if (arr[i-1] <= arr[i-2]) {
-                dp[i] = dp[i-1];
-            } else {
-                dp[i] = dp[i-1] + 1;
+        int max = 1;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j < i; j++) {
+                if (arr[i] > arr[j]) {
+                    dp[i] = Math.max(dp[i], dp[j]+1);
+                }
             }
+            max = Math.max(max, dp[i]);
         }
     
 
