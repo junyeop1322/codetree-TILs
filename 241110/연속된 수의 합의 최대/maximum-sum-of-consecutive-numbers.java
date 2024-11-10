@@ -18,15 +18,20 @@ public class Main {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        int ans = arr[0];
-        dp[0] = arr[0];
-
-        for (int i = 1; i < n; i++) {
-            dp[i] = Math.max(dp[i-1] + arr[i], arr[i]);
-            ans = Math.max(dp[i], ans);
+        long[] prefixSum = new long[n + 1];
+        for (int i = 1; i <= n; i++) {
+            prefixSum[i] = prefixSum[i - 1] + arr[i - 1];
         }
         
+        long maxSum = Long.MIN_VALUE;
 
-        System.out.println(ans);
+        for (int end = k; end <= n; end++) {
+            for (int start = 0; start <= end - k; start++) {
+                long currentSum = prefixSum[end] - prefixSum[start];
+                maxSum = Math.max(maxSum, currentSum);
+            }
+        }
+        
+        System.out.println(maxSum);
     }
 }
