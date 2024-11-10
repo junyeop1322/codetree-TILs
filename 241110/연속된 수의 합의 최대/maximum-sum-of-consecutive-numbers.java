@@ -22,7 +22,7 @@ public class Main {
         dp[0] = arr[0];
 
         for (int i = 1; i < n; i++) {
-            dp[i] = Math.max(dp[i-1] + arr[i], dp[i]);
+            dp[i] = Math.max(dp[i-1] + arr[i], arr[i]);
             ans = Math.max(dp[i], ans);
         }
         
