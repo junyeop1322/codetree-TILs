@@ -11,25 +11,30 @@ public class Main {
         int k = Integer.parseInt(st.nextToken());
 
         int[] arr = new int[n];
-        int[] dp = new int[n];
 
         st = new StringTokenizer(br.readLine(), " ");
         for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        long[] prefixSum = new long[n + 1];
-        for (int i = 1; i <= n; i++) {
-            prefixSum[i] = prefixSum[i - 1] + arr[i - 1];
+        long[] dp = new long[n];
+        dp[0] = arr[0];
+        
+        for (int i = 1; i < n; i++) {
+            dp[i] = Math.max(arr[i], dp[i - 1] + arr[i]);
         }
         
-        long maxSum = Long.MIN_VALUE;
-
-        for (int end = k; end <= n; end++) {
-            for (int start = 0; start <= end - k; start++) {
-                long currentSum = prefixSum[end] - prefixSum[start];
-                maxSum = Math.max(maxSum, currentSum);
-            }
+        long currentSum = 0;
+        for (int i = 0; i < k; i++) {
+            currentSum += arr[i];
+        }
+        
+        long maxSum = currentSum;
+        
+        for (int i = k; i < n; i++) {
+            currentSum = currentSum + arr[i] - arr[i - k];
+            maxSum = Math.max(maxSum, currentSum);
+            maxSum = Math.max(maxSum, currentSum + dp[i - k]);
         }
         
         System.out.println(maxSum);
