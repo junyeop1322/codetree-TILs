@@ -18,7 +18,7 @@ public class Main {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        int ans = Integer.MIN_VALUE;
+        int ans = arr[0];
         dp[0] = arr[0];
 
         for (int i = 1; i < n; i++) {
