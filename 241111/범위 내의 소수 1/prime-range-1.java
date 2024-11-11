@@ -20,6 +20,10 @@ public class Main {
             }
         }
 
+        if (sum == 0) {
+            min = 0;
+        }
+
         System.out.println(sum + " " + min);
     }
 
