@@ -10,7 +10,7 @@ public class Main {
         int a = Integer.parseInt(st.nextToken());
         int b = Integer.parseInt(st.nextToken());
 
-        int sum = 0;
+        long sum = 0;
         int min = Integer.MAX_VALUE;
 
         for (int i = a; i <= b; i++) {
